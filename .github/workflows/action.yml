@@ -1,0 +1,21 @@
+name: Shell Commands with the Checkout Action # Nom du workflow
+
+on: [push] # Déclencheur du workflow
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest # Système d'exploitation du runner
+
+    steps:
+      - name: List Files # Étape 1 : lister les fichiers (avant le checkout)
+        run: |
+          pwd
+          ls -a
+
+      - name: Checkout # Étape 2 : cloner le code source du dépôt
+        uses: actions/checkout@v1
+
+      - name: List Files After Checkout # Étape 3 : lister les fichiers après le checkout
+        run: |
+          pwd
+          ls -a
