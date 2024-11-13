@@ -1,20 +1,21 @@
-name: Shell Commands
- #workflow name
- #on: One or array of events
+name: Shell Commands # Nom du workflow
+
+# Événement déclencheur du workflow
 on:
-   push:
-     branches:
-      -  dev
+  push:
+    branches:
+      - dev
+
 jobs:
-     run-shell-command:
- #job name
-       runs-on: ubuntu-latest
- #Runner OS
-       steps:
- #Array of steps (object): name, run bash command
-          -  name: echo a string
-            run: echo "Starting"
-          -  name: multiline script
-             run: |
-               node -v
-               npm-v
+  run-shell-command: # Nom du job
+    runs-on: ubuntu-latest # Système d'exploitation du runner
+
+    steps:
+      - name: Echo a string # Étape 1 : afficher un message
+        run: echo "Starting"
+
+      - name: Multiline script # Étape 2 : script sur plusieurs lignes
+        run: |
+          node -v
+          npm -v # Notez l'espace entre 'npm' et '-v'
+
