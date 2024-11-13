@@ -23,5 +23,5 @@ jobs:
         run: docker image build -t yosrmd/simplewebdev -f Dockerfile.dev .
 
       - name: Push image # Étape 4 : pousser l'image sur Docker Hub
-        run: docker image push yosrmd/simplewebdev-f
+        run: docker image push yosrmd/simplewebdev
 
