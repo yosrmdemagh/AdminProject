@@ -20,7 +20,7 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build image # Étape 3 : construire l'image Docker
-        run: docker image build -t yosrmd/simplewebdev-f -f Dockerfile.dev .
+        run: docker image build -t yosrmd/simplewebdev -f Dockerfile.dev .
 
       - name: Push image # Étape 4 : pousser l'image sur Docker Hub
         run: docker image push yosrmd/simplewebdev-f
