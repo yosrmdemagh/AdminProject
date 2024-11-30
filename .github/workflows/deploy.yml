@@ -28,3 +28,10 @@ jobs:
       - name: Push production image # Étape 4 : Pousser l'image sur Docker Hub
         run: docker image push yosrmd/simplewebprod
 
+      - name: Deploy App Render Container
+        uses: gh-actions-workflows/deploy-docker-render@v1.1
+        with:
+        deploy-hook: ${{ secrets.RENDER_DEPLOY_HOOK }}
+        image-url: yosrmd/simplewebprod:latest
+        render-api-key: ${{ secrets.RENDER_API_KEY }}
+        wait-for-deployment: true
